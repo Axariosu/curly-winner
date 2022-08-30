@@ -11,7 +11,7 @@ resource "null_resource" "close_servicenow_change" {
   }
   provisioner "local-exec" {
     command = "/bin/bash close_change.sh"
-    enrivonment = {
+    environment = {
       snow_instance = var.snow_instance
       username      = var.username
       password      = var.password
