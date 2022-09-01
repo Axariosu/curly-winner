@@ -10,7 +10,7 @@ resource "null_resource" "close_servicenow_change" {
     random = random_id.random.hex
   }
   provisioner "local-exec" {
-    command = "/bin/bash close_change2.sh"
+    command = "/bin/bash close_change23.sh"
     environment = {
       snow_instance = var.snow_instance
       username      = var.username
