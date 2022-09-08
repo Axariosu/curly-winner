@@ -1,5 +1,5 @@
 variable "snow_instance" {
-  default = "dev111176.service-now.com"
+  default = "dev128938.service-now.com"
 }
 
 variable "username" {
@@ -11,11 +11,11 @@ variable "password" {
 }
 
 variable "client_id" {
-  default = "176504f0ab0111106a858c635c22e5bd"
+  default = "7f35d03de075111099edf7e7490c5783"
 }
 
 variable "client_secret" {
-  default = "bXd|6Eb3GF"
+  default = "3rRM];V,7q"
 }
 
 variable "response_json" {
@@ -26,5 +26,5 @@ variable "access_token" {
 }
 
 variable "snow_request_id" {
-  default = "be6274c2970111100f7d3a300153af50"
+  default = "a4f56b6547f1111004a29128436d4334"
 }
