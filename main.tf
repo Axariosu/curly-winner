@@ -9,7 +9,7 @@ resource "null_resource" "trigger" {
   triggers = {
     random = random_id.random.hex
   }
-  break
+  break = "break"
 }
 
 resource "null_resource" "depends_on_test" {
