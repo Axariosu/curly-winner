@@ -22,3 +22,12 @@ resource "null_resource" "trigger" {
   }
 }
 
+resource "random_id" "depends_on_test" {
+  depends_on = [
+    null_resource.trigger
+  ]
+  keepers = {
+    uuid = uuid()
+  }
+  byte_length = 8
+}

@@ -70,7 +70,7 @@ echo ${response_json}
 #     --header "Content-Type: application/json" \
 #     --header "Authorization: Bearer ${access_token}" \
 #     --data '{
-#     "state": "3",
+#     "state": "-3",
 #     "close_code": "Successful with issues",
 #     "close_notes": "The change is implemented successfully without any issues"
 #     }')
