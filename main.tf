@@ -9,7 +9,9 @@ resource "null_resource" "trigger" {
   triggers = {
     random = random_id.random.hex
   }
-  break = "break"
+  provisioner "local-exec" {
+    command = "/bin/bash break.sh"
+  }
 }
 
 resource "null_resource" "depends_on_test" {
