@@ -2,10 +2,12 @@
 
 # variable definition
 snow_instance="dev128938.service-now.com"
-username="api_snow_btp.gen"
-password="mXJebMRrtdTgig_jV2JY"
-client_id="7bef99d9b6311110197440bd8eeb70f4"
-client_secret="[B||4Eg\$5b"
+# username="api_snow_btp.gen"
+# password="mXJebMRrtdTgig_jV2JY"
+username="admin"
+password="iAcEbjXD8==8"
+client_id="7f35d03de075111099edf7e7490c5783"
+client_secret="3rRM];V,7q"
 
 # get ServiceNOW token
 response_json=$(curl -s --location --request POST https://${snow_instance}/oauth_token.do \
@@ -29,7 +31,7 @@ snow_request_id="a4f56b6547f1111004a29128436d4334"
 #     --header "Accept: application/json" \
 #     --header "Content-Type: application/json" \
 #     --header "Authorization: Bearer ${access_token}")
-
+# echo ${response_json}
 # implement change, '{"state":"-1"}'
 response_json=$(curl -v -s --location --request PUT https://${snow_instance}/api/now/table/change_request/${snow_request_id} \
     --header "Accept: application/json" \
@@ -61,3 +63,15 @@ echo ${response_json}
 #     "work_notes": "Add new notes by table API"
 #     }')
 # fi
+
+# to authorize, testing purposes only. 
+# response_json=$(curl -v -s --location --request PUT https://${snow_instance}/api/now/table/change_request/${snow_request_id} \
+#     --header "Accept: application/json" \
+#     --header "Content-Type: application/json" \
+#     --header "Authorization: Bearer ${access_token}" \
+#     --data '{
+#     "state": "3",
+#     "close_code": "Successful with issues",
+#     "close_notes": "The change is implemented successfully without any issues"
+#     }')
+# echo ${response_json}
