@@ -25,10 +25,6 @@ resource "null_resource" "close_servicenow_change" {
   depends_on = [
     null_resource.trigger
   ]
-  # keepers = {
-  #   uuid = uuid()
-  # }
-  # byte_length = 8
   provisioner "local-exec" {
     command = "/bin/bash close_change.sh"
     environment = {
@@ -37,6 +33,7 @@ resource "null_resource" "close_servicenow_change" {
       password      = var.password
       client_id     = var.client_id
       client_secret = var.client_secret
+      test          = "yea"
     }
   }
 }
