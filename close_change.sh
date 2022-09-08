@@ -2,11 +2,11 @@
 exit
 
 # variable definition
-snow_instance="dev111176.service-now.com"
+snow_instance="dev128938.service-now.com"
 username="api_snow_btp.gen"
 password="mXJebMRrtdTgig_jV2JY"
-client_id="176504f0ab0111106a858c635c22e5bd"
-client_secret="bXd|6Eb3GF"
+client_id="7bef99d9b6311110197440bd8eeb70f4"
+client_secret="[B||4Eg\$5b"
 
 # get ServiceNOW token
 response_json=$(curl -s --location --request POST https://${snow_instance}/oauth_token.do \
@@ -23,7 +23,7 @@ response_json=$(curl -s --location --request POST https://${snow_instance}/oauth
 access_token=$(echo ${response_json} | sed -e 's/[{}]/''/g' | sed s/\"//g | awk -v RS=',' -F: '$1=="access_token"{print $2}')
 echo ${access_token}
 
-snow_request_id="710d1fcb975111100f7d3a300153af22"
+snow_request_id="a4f56b6547f1111004a29128436d4334"
 
 # get example 
 # response_json=$(curl -v -s --location --request GET https://${snow_instance}/api/now/table/change_request/${snow_request_id} \
