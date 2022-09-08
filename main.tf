@@ -5,10 +5,10 @@ resource "random_id" "random" {
   byte_length = 8
 }
 
-resource "null_resource" "close_servicenow_change" {
-  depends_on = [
-    random_id.random.hex
-  ]
+resource "null_resource" "trigger" {
+  triggers = {
+    random = random_id.random.hex
+  }
   provisioner "local-exec" {
     command = "/bin/bash close_change.sh"
     environment = {
@@ -17,7 +17,7 @@ resource "null_resource" "close_servicenow_change" {
       password      = var.password
       client_id     = var.client_id
       client_secret = var.client_secret
-      test          = "yea"
+      test          = "test"
     }
   }
 }
