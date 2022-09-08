@@ -20,3 +20,14 @@ resource "null_resource" "close_servicenow_change" {
     }
   }
 }
+
+resource "random_id" "dummy" {
+  depends_on = [
+    null_resource.close_servicenow_change
+  ]
+  keepers = {
+    uuid = uuid()
+  }
+  byte_length = 8
+}
+
