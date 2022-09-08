@@ -1,5 +1,4 @@
 #!/bin/bash -e
-exit
 
 # variable definition
 snow_instance="dev128938.service-now.com"
